@@ -1,0 +1,276 @@
+{
+    "timeline":
+    {
+        "headline":"Search Horizon launched!!",
+        "type":"default",
+        "text":"<a href='http://searchhorizon.herokuapp.com' target='_blank'>search service of social network</a>",
+        "asset":
+        {
+            "media":"img/logo.png",
+            "credit":"Leon Lin",
+            "caption":"https://github.com/sna-utaipei/6-SearchHorizon-fall2013"
+        },
+        "startDate":"2013,12,7",
+        "date": [
+            {
+                "startDate":"2013,12,7",
+                "headline":"Search Horizon launched!!",
+                 "text":"<a href='http://searchhorizon.herokuapp.com' target='_blank'>search service of social network</a><br>makes search more efficient",
+                "asset":
+                {
+                    "media":"img/logo.png",
+                    "credit":"Leon Lin",
+                    "caption":"https://github.com/sna-utaipei/6-SearchHorizon-fall2013"
+                }
+            },
+            {
+                "startDate":"2013,10,30",
+                "headline":"Cube Play",
+                "text":"<p>Android project<br>opengl es, java</p>",
+                "asset":
+                {
+                    "media":"img/prototype.png",
+                    "credit":"Leon Lin",
+                    "caption":"https://github.com/duraraxbaccano/Cube-Play"
+                }
+            },
+            {
+                "startDate":"2014,1,24",
+                "headline":"Graduation Trip of Japan Nara",
+                "text":"<a href='http://tmuesp.csie.org/~10016022/Japan_Nara/'>Japan Nara</a>",
+                "asset":
+                {
+                    "media":"http://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Todaiji18s3200.jpg/640px-Todaiji18s3200.jpg",
+                    "credit":"Leon Lin",
+                    "caption":"https://github.com/duraraxbaccano/Japan_Nara"
+                }
+            },
+            {
+                "startDate":"2013,3,1",
+                "endDate":"2013,6,30",
+                "headline":"System programming",
+                "text":"Linux, Unix like, gnu c library,c programming, <br>bash script",
+                "asset":
+                {
+                    "media":"http://upload.wikimedia.org/wikipedia/commons/thumb/a/af/GNU_Compiler_Collection_logo.svg/508px-GNU_Compiler_Collection_logo.svg.png",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2013,6,30",
+                "headline":"Use Git",
+                "text":"<img src='http://git-scm.com/images/logo@2x.png'><br>git beginner",
+                "asset":
+                {
+                    "media":"http://git-scm.com/images/branching-illustration@2x.png",
+                    "credit":"",
+                    "caption":"http://git-scm.com/"
+                }
+            },
+            {
+                "startDate":"2012,10,27",
+                "headline":"Computer Graphics",
+                "text":"open graphics library, borland c++ programming, CG concept",
+                "asset":
+                {
+                    "media":"img/graphic1.jpg",
+                    "credit":"Leon Lin",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2012,9,30",
+                "endDate":"2013,1,30",
+                "headline":"Linear algebra",
+                "text":"Matrix -> I used to solve cube problem<br>Scale Rotate Translate(computer graphics)",
+                "asset":
+                {
+                    "media":"img/rotatexy.png",
+                    "credit":"Leon Lin",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2013,7,1",
+                "headline":"Flying robot project : QuadCopter!!",
+                "text":"Amazing unmanned aerial vehicle project !!",
+                "asset":
+                {
+                    "media":"img/quadcopter.jpg",
+                    "credit":"Leon Lin",
+                    "caption":"http://tmuesp.csie.org/~10016022/quadcopter/"
+                }
+            },
+            {
+                "startDate":"2011,9,30",
+                "headline":"Java programming",
+                "text":"heart curve (t 從 0 - 2*PI)<br>double x= 16*sin^3(t);<br>double y= 13*cos(t)-5*cos(2t)-2*cos(3t)-cos(4t);<br>/* y 軸記得要加負號 桃子才會變愛心 (java)<br>~自行用線代公式 平移旋轉縮放 */",
+                "asset":
+                {
+                    "media":"img/java1.jpg",
+                    "credit":"Leon Lin",
+                    "caption":"https://www.dropbox.com/s/oi53pxubrkkgo0a/LoveCurveTest.java"
+                }
+            },
+            {
+                "startDate":"2012,9,20",
+                "headline":"Web programming beginner",
+                "text":"Use jquery, css3, HTML5, php<br>",
+                "asset":
+                {
+                    "media":"",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2012,3,1",
+                "headline":"C programming",
+                "text":"",
+                "asset":
+                {
+                    "media":"",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2012,3,1",
+                "headline":"Data structure",
+                "text":"linked list, queue, stack, graph, sort",
+                "asset":
+                {
+                    "media":"",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2013,9,30",
+                "headline":"Algorithms",
+                "text":"",
+                "asset":
+                {
+                    "media":"",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2013,9,30",
+                "headline":"Automata",
+                "text":"regular expression, finite state machine, turing machine",
+                "asset":
+                {
+                    "media":"",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2013,10,1",
+                "headline":"8051 c,asm programming",
+                "text":"micro processor",
+                "asset":
+                {
+                    "media":"",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2012,9,1",
+                "endDate":"2013,6,30",
+                "headline":"Digital system design",
+                "text":"standard form, k-map, vhdl",
+                "asset":
+                {
+                    "media":"",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2011,9,30",
+                "headline":"Introduction of computer science",
+                "text":"",
+                "asset":
+                {
+                    "media":"",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2013,3,21",
+                "headline":"Android programming",
+                "text":"simple test : snake, cube, binary tree",
+                "asset":
+                {
+                    "media":"",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2013,4,6",
+                "headline":"Python beginner",
+                "text":"learn to use different languages<br>Honai Test",
+                "asset":
+                {
+                    "media":"",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2013,4,6",
+                "headline":"Hybrid programming",
+                "text":"try to use c to implement java with JNI <br>combine different languages and improve performance",
+                "asset":
+                {
+                    "media":"",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2012,3,1",
+                "endDate":"2012,6,30",
+                "headline":"x86 assembly language",
+                "text":"",
+                "asset":
+                {
+                    "media":"",
+                    "credit":"",
+                    "caption":""
+                }
+            },
+            {
+                "startDate":"2014,5,1",
+                "endDate":"2014,12,29",
+                "headline":"Research: Quadcopters",
+                "text":"Using UAV System of Single Chip to implement Quadcopters",
+                "asset":
+                {
+                    "media":"img/quadcopter.png",
+                    "credit":"Leon Lin",
+                    "caption":""
+                } 
+            },
+            {
+                "startDate":"2015,1,6",
+                "endDate":"2015,1,9",
+                "headline":"Porject: Mosaicreen",
+                "text":"Connect your screen with whole screens of the world.</br><a href='http://163.21.245.98/~10016022/mosaicreen/'>Mosaicreen</a>",
+                "asset":
+                {
+                    "media":"img/mosaicreen.png",
+                    "credit":"Leon Lin",
+                    "caption":""
+                } 
+            }
+        ]
+    }
+}

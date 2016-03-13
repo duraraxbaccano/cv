@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Leon Lin</title>
+  <meta property="og:image" content="http://tmuesp.csie.org/~10016022/img/ninjakuma.png"></meta>
+  <meta property="og:title" content="About Leon Lin"></meta>
+  <meta property="og:type" content="website" ></meta>
+  <meta property="og:url" content="http://tmuesp.csie.org/~10016022/" ></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="about Leon Lin">
+  <meta name="author" content="Leon Lin">
+  <meta content="Resume of Leon Lin" name="description"></meta>
+  <meta content="Resume of Leon Lin" property="og:description"></meta>
+	<!--link rel="stylesheet/less" href="less/bootstrap.less" type="text/css" /-->
+	<!--link rel="stylesheet/less" href="less/responsive.less" type="text/css" /-->
+	<!--script src="js/less-1.3.3.min.js"></script-->
+	<!--append ‘#!watch’ to the browser URL, then refresh the page. -->
+	
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/font-awesome.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+  <![endif]-->
+
+  <!-- Fav and touch icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
+  <link rel="shortcut icon" href="img/favicon.ico">
+
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/konami.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/js/flot/excanvas.min.js"></script><![endif]-->
+     
+    <script type="text/javascript" src="js/flot/jquery.flot.min.js"></script>   
+    <script type="text/javascript" src="js/flot/jquery.flot.symbol.min.js"></script>
+    <script type="text/javascript" src="js/flot/jquery.flot.grow.js"></script>
+
+    <script type="text/javascript" src="js/notify.min.js"></script>
+    <script type="text/javascript" src="js/waypoints.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+	<div class="row clearfix" >
+		<div class="col-md-12 column" style="z-index:20;">
+			<div class="jumbotron" >
+				<h1>
+					About Leon Lin
+				</h1>
+				<a href="https://www.facebook.com/accelerater" class="thumbnail" style="float:right;" target="_blank">
+				<img src="img/10016022.jpg" id="leonlogo" class="img-responsive img-rounded" alt="profile">
+				</a>
+				<blockquote>
+				<p>
+					An undergraduate of Department of computer science at University of Taipei<small>林彥廷 <cite>Taiwan</cite>
+				</small>
+				</p>
+			    </blockquote>
+				<p id="menubar">
+					<a class="btn btn-default btn-large" href="#" data-target="div#timeline-embed">
+						<span class="glyphicon glyphicon-flag"></span>Timeline</a>
+					<a class="btn btn-primary btn-large" href="#" data-target="div.languages">Languages</a>
+					<a class="btn btn-success btn-large" href="#" data-target="div.source">Source</a>
+					<a class="btn btn-info btn-large" href="#" data-target="div.school">Education</a>
+					<a class="btn btn-warning btn-large" href="#" data-target="div.story">Exprience</a>
+					<a class="btn btn-danger btn-large" href="#" data-target="div.me">Contact</a>
+				</p>
+			</div>
+		</div>
+	</div>
+    <div id="timeline-embed"></div>
+    <script type="text/javascript">
+        var timeline_config = {
+            width:              '100%',
+            height:             '600',
+            source:             'resume.json',
+            embed_id:           'timeline-embed',               //OPTIONAL USE A DIFFERENT DIV ID FOR EMBED
+            start_at_end:       false,                          //OPTIONAL START AT LATEST DATE
+            start_at_slide:     '23',                            //OPTIONAL START AT SPECIFIC SLIDE
+            start_zoom_adjust:  '1',                            //OPTIONAL TWEAK THE DEFAULT ZOOM LEVEL
+            hash_bookmark:      true,                           //OPTIONAL LOCATION BAR HASHES
+            font:               'Bevan-PotanoSans',             //OPTIONAL FONT
+            debug:              false,                           //OPTIONAL DEBUG TO CONSOLE
+            lang:               'en',                           //OPTIONAL LANGUAGE
+            maptype:            'watercolor',                   //OPTIONAL MAP STYLE
+            css:                'TimelineJS/build/css/timeline.css',     //OPTIONAL PATH TO CSS
+            js:                 'TimelineJS/build/js/timeline-min.js'    //OPTIONAL PATH TO JS
+        }
+    </script>
+    <script type="text/javascript" src="TimelineJS/build/js/storyjs-embed.js"></script>
+	<div class="row clearfix languages">
+		<div class="col-md-12 column">
+			<button type="button" class="btn btn-default btn-lg languages">
+		  		<span class="glyphicon glyphicon-star"></span> Programming Languages
+			</button>
+		</div>
+	</div>
+	<div class="row clearfix piechart" >
+		<div class="col-md-6 column" id="flot-placeholder" style="min-height:450px;">
+		</div>
+		<div class="col-md-6 column" id="player" style="min-height:450px;">
+			
+		</div>
+	</div>
+	<script text="text/javascript">
+		var data=[
+			[0,30], //java
+			[1,40], //php
+			[2,50], //javascript
+			[3,10], //python
+			[4,24] //c (dev, gcc, visual c)
+		];
+		var dataset = [ { label: "Monthes", data: data, color: "#5482FF",grow: {stepMode:"linear",stepDirection:"up",steps:80} }];
+		var ticks = [ [0, "Java"], [1, "PHP"], [2, "JS"], [3, "Python"], [4, "C"] ];
+
+		var options = {
+            series: { 
+            	bars: { show: true },
+            	grow: {active: true }
+            },
+            bars: {
+                align: "center",
+                barWidth: 0.5
+            },
+            xaxis: {
+                axisLabel: "Languages",
+                axisLabelUseCanvas: true,
+                axisLabelFontSizePixels: 12,
+                axisLabelFontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+                axisLabelPadding: 10,
+                ticks: ticks
+            },
+            yaxis: {
+                axisLabel: "Monthes",
+                axisLabelUseCanvas: true,
+                axisLabelFontSizePixels: 12,
+                axisLabelFontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+                axisLabelPadding: 3,
+                tickFormatter: function (v, axis) {
+                    return v;
+                }
+            },
+            legend: {
+                noColumns: 0,
+                labelBoxBorderColor: "#000000",
+                position: "nw"
+            },
+            grid: {
+                hoverable: true,
+                borderWidth: 2,
+                backgroundColor: { colors: ["#ffffff", "#EDF5FF"] }
+            }
+        };
+	</script>
+	<script src="js/bonsai-0.4.1.min.js"></script>
+	<script type="bs" id="bs">
+	function Sector(x, y, radius, startAngle, endAngle) {
+	  SpecialAttrPath.call(this, {
+	    radius: 0,
+	    startAngle: startAngle,
+	    endAngle: endAngle
+	  });
+	  this.attr({
+	    x: x,
+	    y: y,
+	    radius: radius,
+	    startAngle: startAngle,
+	    endAngle: endAngle
+	  });
+	}
+
+	Sector.prototype = Object.create(SpecialAttrPath.prototype);
+	Sector.prototype._make = function() {
+
+	  var attr = this._attributes,
+	      radius = attr.radius,
+	      startAngle = attr.startAngle,
+	      endAngle = attr.endAngle;
+
+	  var startX, startY, endX, endY;
+	  var diffAngle = Math.abs(endAngle - startAngle);
+
+	  this.startX = startX = radius * Math.cos(startAngle);
+	  this.startY = startY = radius * Math.sin(startAngle);
+	  if (diffAngle < Math.PI*2) {
+	    endX = radius * Math.cos(endAngle);
+	    endY = radius * Math.sin(endAngle);
+	  } else { // angles differ by more than 2*PI: draw a full circle
+	    endX = startX;
+	    endY = startY - .0001;
+	  }
+
+	  this.endX = endX;
+	  this.endY = endY;
+
+	  this.radiusExtentX = radius * Math.cos(startAngle + (endAngle - startAngle)/2);
+	  this.radiusExtentY = radius * Math.sin(startAngle + (endAngle - startAngle)/2);
+
+	  return this.moveTo(0, 0)
+	    .lineTo(startX, startY)
+	    .arcTo(radius, radius, 0, (diffAngle < Math.PI) ? 0 : 1, 1, endX, endY)
+	    .lineTo(0, 0);
+
+	};
+
+	Sector.prototype.getDimensions = function() {
+	  var x = this.attr('x'),
+	      y = this.attr('y'),
+	      left = Math.min(x, x + this.startX, x + this.endX, x + this.radiusExtentX),
+	      top = Math.min(y, y + this.startY, y + this.endY, y + this.radiusExtentY),
+	      right = Math.max(x, x + this.startX, x + this.endX, x + this.radiusExtentX),
+	      bottom = Math.max(y, y + this.startY, y + this.endY, y + this.radiusExtentY);
+	  console.log(y, y + this.startY, y + this.endY, y + this.radiusExtentY)
+	  return {
+	    left: left,
+	    top: top,
+	    width: right - left,
+	    height: bottom - top
+	  };
+	};
+
+
+	PieChart.BASE_COLOR = color('red');
+
+	function PieChart(data) {
+	  this.angle = 0;
+	  this.labelY = 30;
+	  this.kolor = PieChart.BASE_COLOR.clone();
+	  var n = 0;
+	  for (var i in data) {
+	    this.slice(i, data[i], n++);
+	  }
+	}
+
+	PieChart.prototype = {
+	  slice: function(name, value, i) {
+
+	    var start = this.angle,
+	        end = start + (Math.PI*2) * value/100,
+	        // Increase hue by .1 with each slice (max of 10 will work)
+	        kolor = this.kolor = this.kolor.clone().hue(this.kolor.hue()+.1);
+
+	    var s = new Sector(
+	      400, 200, 150,
+	      start,
+	      end
+	    );
+
+	    var animDelay = (i * 200) + 'ms';
+
+	    var label = this.label(name, value, kolor);
+
+	    label.attr({ opacity: 0 });
+	    s.stroke('#ddd', 3);
+	    s.fill(kolor);
+
+	    s.attr({
+	      endAngle: start,
+	      radius: 0
+	    }).addTo(stage).on('mouseover', over).on('mouseout', out);
+	    label.on('mouseover', over).on('mouseout', out);
+
+	    function over() {
+	      label.text.attr('fontWeight', 'bold');
+	      label.animate('.2s', {
+	        x: 40
+	      });
+	      s.animate('.2s', {
+	        radius: 170,
+	        fillColor: kolor.lighter(.1)
+	      }, {
+	        easing: 'sineOut'
+	      });
+	    }
+
+	    function out() {
+	      label.text.attr('fontWeight', '');
+	      label.animate('.2s', {
+	        x: 30
+	      });
+	      s.animate('.2s', {
+	        radius: 150,
+	        fillColor: kolor
+	      });
+	    }
+
+	    s.animate('.4s', {
+	      radius: 150,
+	      startAngle: start,
+	      endAngle: end
+	    }, {
+	      easing: 'sineOut',
+	      delay: animDelay
+	    });
+
+	    label.animate('.4s', {
+	      opacity: 1
+	    }, { delay: animDelay });
+
+	    this.angle = end;
+	  },
+
+	  label: function(name, v, fill) {
+
+	    var g = new Group().attr({
+	      x: 30,
+	      y: this.labelY,
+	      cursor: 'pointer'
+	    });
+
+	    var t = new Text(name + ' (' + v + '%)').addTo(g);
+	    var r = new Rect(0, 0, 20, 20, 5).fill(fill).addTo(g);
+
+	    t.attr({
+	      x: 30,
+	      y: 17,
+	      textFillColor: 'black',
+	      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+	      fontSize: '14'
+	    });
+
+	    g.addTo(stage);
+	    this.labelY += 30;
+
+	    g.text = t;
+
+	    return g;
+	  }
+	};
+
+	new PieChart({
+	  JAVA: 15,
+	  PHP: 30,
+	  JS: 30,
+	  Python: 10,
+	  C: 15
+	});
+	</script>
+	<!-- 5 levels : beginner familiar proficient expert master -->
+	<div class="row clearfix" id="levels">
+		<div class="col-md-2 column">
+		</div>
+		<div class="col-md-2 column">
+			<h4>BEGINNER</h4>
+		</div>
+		<div class="col-md-2 column">
+			<h4>FAMILIAR</h4>
+		</div>
+		<div class="col-md-2 column">
+			<h4>PROFICIENT</h4>
+		</div>
+		<div class="col-md-2 column">
+			<h4>EXPERT</h4>
+		</div>
+		<div class="col-md-2 column">
+			<h4>MASTER</h4>
+		</div>
+	</div>
+
+	<!-- JAVA area -->
+	<div class="row clearfix">
+		<div class="col-md-2 column level_title">
+			<span class="label label-primary">JAVA</span>
+		</div>
+		<div class="col-md-10 column">
+			<br>
+			<div class="progress progress-striped active">
+				<!-- 75% -->
+					<div class="progress-bar level_java" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+				    	<span class="sr-only">70% EXPERT</span>
+					</div>
+			</div>
+			<!-- skill -->
+			<div class="col-md-2 column level_content java_skill">
+				<i class="glyphicon glyphicon-star"></i>API
+			</div>
+			<div class="col-md-2 column level_content java_skill">
+				<i class="glyphicon glyphicon-star"></i>OOP
+			</div>
+			<div class="col-md-2 column level_content java_skill">
+				<i class="glyphicon glyphicon-star"></i>Thread
+			</div>
+			<div class="col-md-2 column level_content java_skill">
+				<i class="glyphicon glyphicon-star"></i>Generics
+			</div>
+			<div class="col-md-2 column level_content java_skill">
+				<i class="glyphicon glyphicon-star"></i>Net
+			</div>
+			<!--
+				/* others : file, Exception, JVM, JNI */
+			 -->
+		</div>
+	</div>
+	
+	<!-- php area -->
+	<div class="row clearfix">
+		<div class="col-md-2 column level_title">
+			<span class="label label-success">PHP</span>
+		</div>
+		<div class="col-md-10 column">
+			<br>
+			<div class="progress progress-striped active">
+				<!-- 50% -->
+					<div class="progress-bar progress-bar-success level_php" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+				    	<span class="sr-only">50% PROFICIENT</span>
+					</div>
+			</div>
+			<!-- skill -->
+			<div class="col-md-2 column level_content php_skill">
+				<i class="glyphicon glyphicon-star"></i>Functions
+			</div>
+			<div class="col-md-2 column level_content php_skill">
+				<i class="glyphicon glyphicon-star"></i>Magic Methods
+			</div>
+			<div class="col-md-2 column level_content php_skill">
+				<i class="glyphicon glyphicon-star"></i>OOP
+			</div>
+			<div class="col-md-2 column level_content php_skill">
+				<i class="glyphicon glyphicon-star"></i>SPL
+			</div>
+			<div class="col-md-2 column level_content php_skill">
+				<!-- 
+					<i class="glyphicon glyphicon-star"></i>Exception
+				-->
+			</div>
+		</div>
+	</div>
+
+	<!-- JS area -->
+	<div class="row clearfix">
+		<div class="col-md-2 column level_title">
+			<span class="label label-info">JS</span>
+		</div>
+		<div class="col-md-10 column">
+				<br>
+			<div class="progress progress-striped active">
+			<!-- 55% -->
+			<div class="progress-bar progress-bar-info level_js" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+		    	<span class="sr-only">55% PROFICIENT</span>
+			</div>
+			</div>
+			<!-- skill -->
+			<div class="col-md-2 column level_content js_skill">
+				<i class="glyphicon glyphicon-star"></i>Functions<br>
+				<i class="glyphicon glyphicon-star"></i>Types
+			</div>
+			<div class="col-md-2 column level_content js_skill">
+				<i class="glyphicon glyphicon-star"></i>OOP<br>
+				<i class="glyphicon glyphicon-star"></i>prototype
+			</div>
+			<div class="col-md-2 column level_content js_skill">
+				<i class="glyphicon glyphicon-star"></i>DOM<br>
+				<i class="glyphicon glyphicon-star"></i>Ajax<br>
+				<i class="glyphicon glyphicon-star"></i>JSON
+			</div>
+			<div class="col-md-2 column level_content js_skill">
+				<i class="glyphicon glyphicon-star"></i>Idioms<br>
+				<i class="glyphicon glyphicon-star"></i>NodeJS<br>
+				<i class="glyphicon glyphicon-star"></i>Meteor
+			</div>
+			<div class="col-md-2 column level_content js_skill">
+				<!-- 
+					<i class="glyphicon glyphicon-star"></i>Exception
+				-->
+			</div>
+		</div>
+	</div>
+
+	<!-- C or Python or C++ -->
+	<div class="row clearfix">
+		<div class="col-md-2 column level_title">
+			<span class="label label-warning">C</span>
+		</div>
+		<div class="col-md-10 column">
+				<br>
+			<div class="progress progress-striped active">
+			<!-- 55% -->
+			<div class="progress-bar progress-bar-warning level_c" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+		    	<span class="sr-only">55% PROFICIENT</span>
+			</div>
+			</div>
+			<!-- skill -->
+			<div class="col-md-2 column level_content c_skill">
+				<i class="glyphicon glyphicon-star"></i>stdlib.h<br>
+				<i class="glyphicon glyphicon-star"></i>time.h
+			</div>
+			<div class="col-md-2 column level_content c_skill">
+				<i class="glyphicon glyphicon-star"></i>stdio.h<br>
+				<i class="glyphicon glyphicon-star"></i>string.h<br>
+				<i class="glyphicon glyphicon-star"></i>math.h
+			</div>
+			<div class="col-md-2 column level_content c_skill">
+				<i class="glyphicon glyphicon-star"></i>Preprocessing<br>
+			</div>
+			<div class="col-md-2 column level_content c_skill">
+				<i class="glyphicon glyphicon-star"></i>Pointer
+			</div>
+			<div class="col-md-2 column level_content c_skill">
+				<!-- 
+					<i class="glyphicon glyphicon-star"></i>Exception
+				-->
+			</div>
+		</div>
+	</div>
+
+	<div class="row clearfix">
+		<div class="col-md-2 column level_title">
+			<span class="label label-danger">Others</span>
+		</div>
+		<div class="col-md-10 column">
+				<br>
+			<div class="progress progress-striped active">
+			<!-- 70% -->
+			<div class="progress-bar progress-bar-danger level_other" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+		    	<span class="sr-only">70% Total</span>
+			</div>
+			</div>
+			<!-- skill -->
+			<div class="col-md-2 column level_content other_skill">
+				<i class="glyphicon glyphicon-star"></i>jQuery<br>
+				<i class="glyphicon glyphicon-star"></i>CSS3<br>
+				<i class="glyphicon glyphicon-star"></i>Bootstrap
+			</div>
+			<div class="col-md-2 column level_content other_skill">
+				<i class="glyphicon glyphicon-star"></i>Photoshop
+			</div>
+			<div class="col-md-2 column level_content other_skill">
+				<i class="glyphicon glyphicon-star"></i>Excel
+			</div>
+			<div class="col-md-2 column level_content other_skill">
+				<i class="glyphicon glyphicon-star"></i>Git
+			</div>
+			<div class="col-md-2 column level_content other_skill">
+				<i class="glyphicon glyphicon-star"></i>Linear algebra<br>
+				<i class="glyphicon glyphicon-star"></i>OpenGL<br>
+				<i class="glyphicon glyphicon-star"></i>WebGL<br>
+				<i class="glyphicon glyphicon-star"></i>three.js
+			</div>
+		</div>
+	</div>
+
+	<!-- Other like WebGL, frameworks  -->
+	<div class="row clearfix source">
+		<div class="col-md-12 column">
+			<button type="button" class="btn btn-default btn-lg source">
+		  		<i class="fa fa-github-alt"></i> Source
+			</button>
+		</div>
+	</div>
+	<div class="row clearfix source" id="air">
+		<div class="col-md-6 column">
+			<div class="col-md-6 column logo">
+				<i class="fa fa-coffee"></i><br><span class="java">JAVA</span>
+				<ul>
+					<li><i class="fa fa-file-o"></i>
+					<a href="https://www.dropbox.com/s/oi53pxubrkkgo0a/LoveCurveTest.java" target="_blank">LoveCurveTest.java</a></li>
+					<li><i class="fa fa-file-o"></i>
+					<a href="https://www.dropbox.com/s/05qheiduqrze26e/SnakeTest.java" target="_blank">SnakeTest.java</a></li>
+					<li><i class="fa fa-file-o"></i> 
+					<a href="https://www.dropbox.com/sh/dfe9clgr4hruljk/IA7miENtew" target="_blank">Java_Call_C</a></li>
+					<li><i class="fa fa-file-o"></i>
+					<a href="https://www.dropbox.com/s/8quibofkfyxd86b/PE_LinkedList.java" target="_blank">Linked list for programming exam</a>
+					</li>
+					<li><i class="fa fa-file-o"></i>
+					<a href="https://www.dropbox.com/s/gnfm1fkagu97189/FloatTransfer.java" target="_blank">Float number for programming exam</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-md-6 column logo">
+				<i class="fa fa-android"></i><br><span class="android">Android</span>
+				<ul>
+					<li><i class="fa fa-file-o"></i>
+					<a href="https://github.com/duraraxbaccano/Cube-Play" target="_blank">CubePlay</a></li>
+					<li><i class="fa fa-file-o"></i>
+					<a href="https://www.dropbox.com/sh/j2nnw4q79dy8f5i/OlxynqkCJL" target="_blank">SnakePlay</a></li>
+					<li><i class="fa fa-file-o"></i>
+					<a href="https://www.dropbox.com/sh/bvajjoxlgohwbzn/4JPn3wrc0G" target="_blank">Binary expression tree</a></li>
+					<li><i class="fa fa-file-o"></i> 
+					<a href="https://www.dropbox.com/s/h4rbjpodt7ac7ab/PushUpsCounter.java" target="_blank">Push-ups counter</a></li>
+					<li><i class="fa fa-file-o"></i>
+					<a href="https://www.dropbox.com/s/jfsja6b418inz70/SitUpsCounter.java" target="_blank">Sit-ups counter</a></li>
+					<li><i class="fa fa-file-o"></i> 
+					<a href="https://www.dropbox.com/sh/b9eakvavj3rijzb/4UaLSaS3yY" target="_blank">Counting sort</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-6 column">
+			<div class="col-md-6 column logo">
+				<i class="fa fa-globe"></i><br><span class="javascript">JS</span>
+					<ul>
+						<li class="cloudjs"><i class="fa fa-file-o"></i>
+						<a href="https://dl.dropboxusercontent.com/u/36926980/algorithms/js/cloud.js" target="_blank">cloud.js</a></li>
+						<li><i class="fa fa-file-o"></i>
+						<a href="https://dl.dropboxusercontent.com/u/36926980/algorithms/css/item.css" target="_blank">list.js</a></li>
+						<li class="konamijs"><i class="fa fa-file-o"></i> 
+						<a href="https://dl.dropboxusercontent.com/u/36926980/algorithms/js/konami.js" target="_blank">konami.js</a></li>
+						<li><i class="fa fa-file-o"></i>
+						<a href="https://dl.dropboxusercontent.com/u/36926980/algorithms/js/search.js" target="_blank">bsearch.js</a></li>
+					</ul>
+			</div>
+			<div class="col-md-6 column logo">
+				<i class="fa fa-c">C</i><br><span class="c">Language</span>
+					<ul>
+						<li><i class="fa fa-file-o"></i>
+						<a href="https://www.dropbox.com/s/8png4ukfip3c8t2/sp2.c" target="_blank">linked_list.c</a></li>
+						<li><i class="fa fa-file-o"></i>
+						<a href="https://www.dropbox.com/s/5z9gcvginkltmj0/tcp.c" target="_blank">tcp.c</a></li>
+						<li><i class="fa fa-file-o"></i> 
+						<a href="https://www.dropbox.com/s/10bxir21ap4fld9/tls.c" target="_blank">tls.c</a></li>
+						<li><i class="fa fa-file-o"></i>
+						<a href="https://www.dropbox.com/sh/fywsrh32ehs4g79/KsXXlprZYh" target="_blank">8051.c</a></li>
+					</ul>
+			</div>
+		</div>
+	</div>
+	<div class="row clearfix school">
+		<div class="col-md-12 column ">
+			<button type="button" class="btn btn-default btn-lg school">
+		  		<i class="fa fa-book"></i> Education
+			</button>
+		</div>
+	</div>
+	<!-- 
+		Live in where, favorite game, book, design .... work experience
+	-->
+	<div class="row clearfix">
+		<div class="col-md-8 column utcontent">
+			<div class="page-header">
+			  <h1>University of Taipei<small> - Computer Science</small></h1>
+			</div>
+			<span class="badge">2015 - Now</span>
+			<p>
+				<ul>
+					<li>
+						Mosaicreen got the 4th place 
+						<a href="http://lrs.itsa.org.tw/mod/resource/view.php?id=5392" target="_blank"> NCCU</a>
+					</li>
+					<li>
+						Research: "Using UAV System of Single Chip to implement Quadcopters"
+					</li>
+				</ul>
+			</p>
+			<span class="badge">2011 - 2014</span>
+			<p>
+				<ul>
+					<li>Search Horizon got the 1st place (Gold) at <a href="http://c047.utaipei.edu.tw/files/14-1066-31289,r186-1.php" target="_blank">UT</a> 
+					</li>
+					<li>Search Horizon got the 2nd place (Silver) at <a href="http://lrs.itsa.org.tw/mod/resource/view.php?id=4376" target="_blank"> NCCU</a> 
+					</li>
+					<li>Cube Play got the 2nd place (Silver) of <a href="http://cs.utaipei.edu.tw/news/news.php?Sn=320" target="_blank">creative app group at UT</a>
+					</li>
+					<li>
+						UT programming contest the 1st place (Gold) <a href="https://dl.dropboxusercontent.com/u/36926980/algorithms/img/contest.jpg" target="_blank">Award</a>
+					</li>
+					<li>
+						Web design contest the 2nd place (Silver) <a href="https://dl.dropboxusercontent.com/u/36926980/algorithms/img/contest2.jpg" target="_blank">Award</a>
+					</li>
+					<li>Top 5% scholarship 
+						<span class="badge">2013 - 2014</span></li>
+				</ul>
+			</p>
+		</div>
+		<div class="col-md-4 column ">
+			<div class="utlogo">
+				<a href="http://www.utaipei.edu.tw/bin/home.php" target="_blank"><img src="img/utlogo.png" class="img-responsive" alt="Responsive image"></a>
+			</div>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-8 column cgcontent">
+			<div class="page-header">
+			  <h1>Chenggong High School</h1>
+			</div>
+			<span class="badge">2008 - 2011</span>
+		</div>
+		<div class="col-md-4 column ">	
+				<a href="http://saturn.cksh.tp.edu.tw/" target="_blank"><img src="img/cglogo.jpg" class="img-responsive" alt="成功高中"></a>
+			<div class="cglogo">
+				
+			</div>		
+		</div>
+	</div>
+	<div class="row clearfix">
+	</div>
+	<div class="row clearfix story">
+		<div class="col-md-12 column ">
+			<button type="button" class="btn btn-default btn-lg story">
+		  		<i class="fa fa-briefcase"></i> Experience
+			</button>
+		</div>
+	</div>
+	<script src="js/cloud.js"></script>
+	<div class="row clearfix">
+		<div class="col-md-12 column new-taipei-city" id="new-taipei-city">
+		<!-- Live in Banqiao district -->
+			<h1 class="ribbon">
+				   <strong class="ribbon-content">Live in Banqiao district, New Taipei City</strong>
+			</h1>
+			<i class="tree"></i>
+			<i class="star"></i>
+			<i class="building"></i>
+			<i class="traffic"></i> 
+			<i class="Banqiao"></i> 
+			<i class="megacity"></i>
+		</div>
+	</div>
+
+	<div class="row clearfix">
+		<div class="col-md-12 column hobby">
+			<h1 class="ribbon">
+				   <strong class="ribbon-content">Working Experience</strong>
+			</h1>
+		</div>
+	</div>
+
+	<div class="row clearfix">
+		<div class="col-md-12 column working3">
+			<h1>PIXNET</h1>
+			<h2>April 2014 - August 2014</h2>
+			<br>
+			<img src="img/d3.png" alt="d3 js library"><i class="fa fa-plus"></i>
+			<span class="imgText">NVD3.js</span><i class="fa fa-plus"></i>
+			<img src="img/heatmap.png" alt="heat map">
+			<br>
+			<p class="col-md-3 column"></p>
+			<p class="col-md-9 column">
+				1. Implement many charts of business <br>
+				&emsp; for the demands of PIXInsight.</br>
+				2. Design and implement the heat map </br>
+				&emsp; of PIXNET mobile ads.</br>
+			</p>
+		</div>
+	</div>
+
+	<div class="row row_space"></div>
+	<div class="row clearfix">
+		<div class="col-md-12 column working3">
+			<h1>CyberLink</h1>
+			<h2>September 2013 - July 2014</h2>
+			<br>
+			<img src="img/excel.png" alt="Excel"><i class="fa fa-plus"></i>
+			<img src="img/ga.png" alt="GA"><i class="fa fa-plus"></i>
+			<img src="img/ps.png" alt="Photoshop">
+			<br>
+			<p class="col-md-3 column"></p>
+			<p class="col-md-9 column">Web commerce part-time job<br>
+			Assist the team in running business plan,<br>
+			update reports of BI projects,<br>
+			and advertise banners and texts.  
+			</p>
+		</div>
+	</div>
+
+	<div class="row row_space"></div>
+	<div class="row clearfix">
+		<div class="col-md-12 column working1">
+			<h1>Freelance</h1>
+			<h2>September 2012 - August 2013</h2>
+			<br>
+			<i class="fa fa-android"></i> <i class="fa fa-plus"></i>
+			<i class="fa fa-github"></i> <i class="fa fa-plus"></i>
+			<i class="fa fa-facebook-square"></i>
+			<br>
+			<p class="col-md-3 column"></p>
+			<p class="col-md-9 column">
+				programed with Android framework, <br>
+				and used APIs to help contractors finish<br>
+				parts of the application.
+			</p>
+		</div>
+	</div>
+
+	<div class="row row_space"></div>
+	<div class="row clearfix">
+		<div class="col-md-12 column working2">
+			<img src="img/apache.png" alt="Apache"><i class="fa fa-plus"></i>
+			<img src="img/php.png" alt="PHP"><i class="fa fa-plus"></i>
+			<img src="img/mysql.png" alt="MySQL">
+			<br>
+			<p class="col-md-3 column"></p>
+			<p class="col-md-9 column">
+				Designed and developed a simple website<br>
+				and customized services for customers.
+			</p>
+		</div>
+	</div>
+
+	<div class="row clearfix me">
+		<div class="col-md-12 column ">
+			<button type="button" class="btn btn-default btn-lg me">
+		  		<i class="fa fa-mobile"></i> Contact me
+			</button>
+		</div>
+	</div>
+
+	<div class="row row_space"></div>
+	<div class="row clearfix">
+		<div class="col-md-6 column contact_email">
+			<i class="fa fa-envelope"></i><br>
+			<h1>Email : 
+			<a href="#" data-target="div.school">ientin.lin@gmail.com</a>
+			</h1>
+		</div>
+		<div class="col-md-6 column contact_facebook">
+			<span class="fa-stack fa-lg">
+			  <i class="fa fa-square-o fa-stack-2x"></i>
+			  <i class="fa fa-facebook fa-stack-1x"></i>
+			</span>
+			<br>
+			<h1>
+			<a href="https://www.facebook.com/accelerater" 
+			target="_blank">www.facebook.com/accelerater</a>
+			</h1>
+		</div>
+	</div>	
+</div>
+</body>
+</html>
